@@ -8,6 +8,15 @@
 }
 
 html {
+  --surface-0: #fff;
+
+  --text: #1f2328;
+  --text-muted: #656d76;
+
+  --link: #0969da;
+
+  --border: #d0d7de;
+
   font-family: Mona Sans, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu,
     Cantarell, Noto Sans, sans-serif;
   text-align: center;
@@ -17,6 +26,26 @@ html {
 
   --hero-padding-block-start: 64px;
   --hero-padding-block-end: 48px;
+
+  --card-border: transparent;
+  --card-shadow: 0 1px 15px rgba(27, 31, 35, 0.15),
+    0 0 1px rgba(106, 115, 125, 0.35);
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    --surface-0: #0d1117;
+
+    --text: #e6edf3;
+    --text-muted: #7d8590;
+
+    --link: #2f81f7;
+
+    --border: #30363d;
+
+    --card-border: var(--border);
+    --card-shadow: 0 3px 6px #010409;
+  }
 }
 
 @media screen and (min-width: 769px) {
@@ -33,6 +62,8 @@ html {
 
 body {
   margin: 0;
+  color: var(--text);
+  background-color: var(--surface-0);
 }
 
 section {
@@ -56,6 +87,7 @@ section {
   margin-top: 0.75em;
   max-width: 60ch;
   font-size: var(--font-size-hero-description);
+  color: var(--text-muted);
 }
 
 #actions {
@@ -74,9 +106,10 @@ section {
   text-align: left;
   text-decoration: none;
   color: inherit;
+  background-color: var(--surface-0);
+  border: 1px solid var(--card-border);
   border-radius: 6px;
-  box-shadow: 0 1px 15px rgba(27, 31, 35, 0.15),
-    0 0 1px rgba(106, 115, 125, 0.35);
+  box-shadow: var(--card-shadow);
   transition: transform 0.2s;
 }
 #actions > a:hover {
@@ -85,21 +118,26 @@ section {
 #actions .summary {
   padding: 24px;
 }
+#actions .summary p {
+  color: var(--text-muted);
+}
 #actions .repo {
   padding: 16px 24px;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid var(--border);
   display: flex;
   align-items: center;
   gap: 8px;
+  color: var(--text-muted);
   transition: color 0.4s;
 }
 #actions > a:hover .repo {
-  color: #0969da;
+  color: var(--link);
 }
 #actions .repo p {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-weight: 500;
 }
 #actions h2 {
   margin: 0;
