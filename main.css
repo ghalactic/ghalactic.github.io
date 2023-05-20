@@ -8,9 +8,6 @@
 }
 
 html {
-  --padding-block: 24px;
-  --padding-inline: 16px;
-
   font-family: Mona Sans, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu,
     Cantarell, Noto Sans, sans-serif;
   text-align: center;
@@ -21,9 +18,6 @@ html {
 
 @media screen and (min-width: 769px) {
   html {
-    --padding-block: 48px;
-    --padding-inline: 32px;
-
     text-align: left;
 
     --font-size-hero-title: 4rem;
@@ -35,11 +29,14 @@ body {
   margin: 0;
 }
 
-#hero {
+section {
   max-width: 1280px;
   margin: 0 auto;
-  padding-block: calc(var(--padding-block) * 2);
-  padding-inline: var(--padding-inline);
+  padding: 16px;
+}
+
+#hero {
+  padding-block: 48px;
 }
 #hero h1 {
   margin: 0;
@@ -49,7 +46,63 @@ body {
 }
 #hero p {
   margin: 0;
-  margin-top: 1rem;
+  margin-top: 0.75em;
   max-width: 60ch;
   font-size: var(--font-size-hero-description);
+}
+
+#actions {
+  display: grid;
+  gap: 24px;
+  grid-auto-rows: 1fr;
+  grid-template-columns: repeat(auto-fill, 100%);
+}
+
+@media screen and (min-width: 769px) {
+  #actions {
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  }
+}
+#actions > a {
+  text-align: left;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 6px;
+  box-shadow: 0 1px 15px rgba(27, 31, 35, 0.15),
+    0 0 1px rgba(106, 115, 125, 0.35);
+  transition: transform 0.2s;
+}
+#actions > a:hover {
+  transform: scale(1.05);
+}
+#actions .summary {
+  padding: 24px;
+}
+#actions .repo {
+  padding: 16px 24px;
+  border-top: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.4s;
+}
+#actions > a:hover .repo {
+  color: #0969da;
+}
+#actions .repo p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#actions h2 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+#actions p {
+  margin: 0;
+}
+#actions h2 + p {
+  margin-top: 0.75em;
 }
