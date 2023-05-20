@@ -1,2 +1,1 @@
-# ghalactic.github.io
-The Ghalactic website
+# Ghalactic website
