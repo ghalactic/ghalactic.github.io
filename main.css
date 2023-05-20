@@ -14,6 +14,9 @@ html {
 
   --font-size-hero-title: 2rem;
   --font-size-hero-description: 1rem;
+
+  --hero-padding-block-start: 64px;
+  --hero-padding-block-end: 48px;
 }
 
 @media screen and (min-width: 769px) {
@@ -22,6 +25,9 @@ html {
 
     --font-size-hero-title: 4rem;
     --font-size-hero-description: 1.25rem;
+
+    --hero-padding-block-start: 128px;
+    --hero-padding-block-end: 64px;
   }
 }
 
@@ -36,7 +42,8 @@ section {
 }
 
 #hero {
-  padding-block: 48px;
+  padding-block-start: var(--hero-padding-block-start);
+  padding-block-end: var(--hero-padding-block-end);
 }
 #hero h1 {
   margin: 0;
