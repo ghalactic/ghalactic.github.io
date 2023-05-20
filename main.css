@@ -115,6 +115,11 @@ section {
 #actions > a:hover {
   transform: scale(1.05);
 }
+@media (prefers-reduced-motion) {
+  #actions > a:hover {
+    transform: scale(1);
+  }
+}
 #actions .summary {
   padding: 24px;
 }
