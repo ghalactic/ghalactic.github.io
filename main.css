@@ -112,12 +112,9 @@ section {
   box-shadow: var(--card-shadow);
   transition: transform 0.2s;
 }
-#actions > a:hover {
-  transform: scale(1.05);
-}
-@media (prefers-reduced-motion) {
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
   #actions > a:hover {
-    transform: scale(1);
+    transform: scale(1.05);
   }
 }
 #actions .summary {
@@ -135,8 +132,14 @@ section {
   color: var(--text-muted);
   transition: color 0.4s;
 }
-#actions > a:hover .repo {
+#actions > a:active .repo {
+  transition: color 0s;
   color: var(--link);
+}
+@media (hover: hover) {
+  #actions > a:hover .repo {
+    color: var(--link);
+  }
 }
 #actions .repo p {
   white-space: nowrap;
