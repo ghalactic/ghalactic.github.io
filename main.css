@@ -24,8 +24,8 @@ html {
   --font-size-hero-title: 2rem;
   --font-size-hero-description: 1rem;
 
-  --hero-padding-block-start: 64px;
-  --hero-padding-block-end: 48px;
+  --hero-padding-block-start: 48px;
+  --hero-padding-block-end: 24px;
 
   --card-border: transparent;
   --card-shadow: 0 1px 15px rgba(27, 31, 35, 0.15),
@@ -111,6 +111,21 @@ section {
   border-radius: 6px;
   box-shadow: var(--card-shadow);
   transition: transform 0.2s;
+
+  display: grid;
+  grid-template-areas:
+    "icon"
+    "summary"
+    "repo";
+  grid-template-columns: 1fr;
+}
+@media screen and (min-width: 769px) {
+  #actions > a {
+    grid-template-areas:
+      "summary icon"
+      "repo    repo";
+    grid-template-columns: 1fr 88px;
+  }
 }
 @media (hover: hover) and (prefers-reduced-motion: no-preference) {
   #actions > a:hover {
@@ -118,17 +133,21 @@ section {
   }
 }
 #actions .summary {
+  grid-area: summary;
   padding: 24px;
+  padding-right: 16px;
 }
 #actions .summary p {
   color: var(--text-muted);
 }
 #actions .repo {
+  grid-area: repo;
   padding: 16px 24px;
   border-top: 1px solid var(--border);
   display: flex;
   align-items: center;
   gap: 8px;
+  overflow: hidden;
   color: var(--text-muted);
   transition: color 0.4s;
 }
@@ -158,4 +177,26 @@ section {
 }
 #actions h2 + p {
   margin-top: 0.75em;
+}
+#actions .icon {
+  grid-area: icon;
+  margin: 16px auto 0 auto;
+  width: 64px;
+  height: 64px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: #fff;
+}
+@media screen and (min-width: 769px) {
+  #actions .icon {
+    margin: 20px 24px 0 0;
+  }
+}
+#actions .icon.green {
+  background-color: #28a745;
+}
+#actions .icon svg {
+  width: 32px;
+  height: 32px;
 }
