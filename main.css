@@ -73,7 +73,7 @@ body {
 }
 
 section {
-  max-width: 1280px;
+  max-width: 960px;
   margin: 0 auto;
   padding: 16px;
 }
@@ -86,17 +86,37 @@ section {
 #hero {
   padding-block-start: var(--hero-padding-block-start);
   padding-block-end: var(--hero-padding-block-end);
+
+  display: grid;
+  justify-items: center;
+  grid-template-areas:
+    "logo"
+    "text";
+  grid-template-columns: 1fr;
 }
 #hero svg {
+  grid-area: logo;
   width: 64px;
   height: 64px;
   margin-bottom: 16px;
 }
 @media screen and (min-width: 769px) {
-  #hero svg {
-    width: 96px;
-    height: 96px;
+  #hero {
+    padding-block-start: var(--hero-padding-block-start);
+    padding-block-end: var(--hero-padding-block-end);
+
+    display: grid;
+    justify-items: start;
+    grid-template-areas: "text logo";
+    grid-template-columns: 1fr 128px;
   }
+  #hero svg {
+    width: 128px;
+    height: 128px;
+  }
+}
+#hero div {
+  grid-area: text;
 }
 #hero h1 {
   margin: 0;
