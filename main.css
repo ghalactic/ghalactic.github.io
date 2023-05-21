@@ -24,6 +24,8 @@ html {
     Cantarell, Noto Sans, sans-serif;
   text-align: center;
 
+  --gradient-hero: linear-gradient(87.54deg, #9867f0 -6.8%, #ed4e50 84.14%);
+
   --font-size-hero-title: 2rem;
   --font-size-hero-description: 1rem;
 
@@ -48,6 +50,8 @@ html {
 
     --logo: #85b3df;
     --logo-muted: #4a7ebf;
+
+    --gradient-hero: linear-gradient(130deg, #3bf0e4 -6.8%, #bca1f7 70%);
 
     --card-border: var(--border);
     --card-shadow: 0 3px 6px #010409;
@@ -123,6 +127,11 @@ section {
   font-size: var(--font-size-hero-title);
   font-weight: 800;
   letter-spacing: -0.03em;
+
+  background-image: var(--gradient-hero);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 #hero p {
   margin: 0.75em auto 0 auto;
