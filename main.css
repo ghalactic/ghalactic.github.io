@@ -255,3 +255,23 @@ section {
   width: 32px;
   height: 32px;
 }
+
+#footer div {
+  margin-top: 48px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+  color: var(--text-muted);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#footer a {
+  color: currentColor;
+}
+#footer a:hover,
+#footer a:active {
+  color: var(--text);
+}
+#footer p {
+  margin: 0;
+}
